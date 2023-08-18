@@ -27,7 +27,7 @@ if($cek > 0){
 	$_SESSION['level'] = $row['level'];
       //Store the name in the session
    
-	if ($_SESSION['level']== 1) { 
+	if ($_SESSION['level'] == 1) { 
 		header("location:admin/dashbord.php");
 	} else {
 		header("location:navigasi.php");

@@ -32,7 +32,7 @@ if (!isset($_SESSION['login'])) {
             <div class="sidebar  border-right col-md-3 col-lg-2 p-0 " style="background-color:#282a36; border-right: solid white 1px;  position:fixed; height:100vh;">
                 <div class="offcanvas-md " tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
                     <a href="" class="d-flex align-items-center ml-3 mb-md-3 me-md-auto text-white gap-2 text-decoration-none" style="align-items: center; margin-left: 40px; ">
-                        <i class="bi bi-bootstrap-fill"></i>
+                        <i class="bi bi-bootstrap-fill" style="margin-top: 10px;"></i>
                         <span style="margin-top: 10px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;" class="fs-5">Shopify</span>
                     </a>
                     <div class="offcanvas-body d-md-flex flex-column p-4 pt-lg-2 overflow-y-auto">

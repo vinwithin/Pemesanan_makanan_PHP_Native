@@ -4,7 +4,9 @@ session_start();
 
 if (!isset($_SESSION['login'])) {
     header("Location: login.php");
+    
 }
+
 
 ?>
 <!DOCTYPE html>
@@ -34,7 +36,7 @@ if (!isset($_SESSION['login'])) {
             <div class="sidebar  border-right col-md-3 col-lg-2 p-0 " style="background-color:#282a36; border-right: solid white 1px;  position:fixed; height:100vh; ">
                 <div class="offcanvas-md " tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
                     <a href="" class="d-flex align-items-center ml-3 mb-md-3 me-md-auto text-white gap-2 text-decoration-none" style="align-items: center; margin-left: 40px; ">
-                        <i class="bi bi-bootstrap-fill"></i>
+                        <i class="bi bi-bootstrap-fill" style="margin-top: 10px;"></i>
                         <span style="margin-top: 10px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;" class="fs-5">Shopify</span>
                     </a>
                     <div class="offcanvas-body d-md-flex flex-column p-4 pt-lg-2 overflow-y-auto">
@@ -85,16 +87,17 @@ if (!isset($_SESSION['login'])) {
                         <div class=" flex mt-4 sm:mt-0 float-end ">
                             <a href="Hapus_semua.php" class="btn btn-primary shadow-md mr-2 ">Clear Cart</a>
                             <a href="navigasi.php" class="btn btn-danger shadow-md mr-2 ">Continue Shopping</a>
+                            
                         </div>
                     </div>
-                    <!-- BEGIN: Transaction Details -->
+                    
                     <div class="intro-y grid grid-cols-11 gap-5 mt-5">
 
                         <div class="col-span-4 lg:col-span-4 2xl:col-span-2">
                             <div class="box p-5 rounded-md">
 
-
-                                <a href="" class="flex items-center ml-auto btn btn-primary shadow-md mr-2"><i class="fa-solid fa-chart-line"></i>&nbsp;CHECKOUT </a>
+                                <form action="addCart.php" method="POST">
+                                <button  class="flex items-center ml-auto btn btn-primary shadow-md mr-2"><i class="fa-solid fa-chart-line"></i>&nbsp;CHECKOUT </button>
 
 
 
@@ -128,10 +131,14 @@ if (!isset($_SESSION['login'])) {
                                                                 <img alt="Midone - HTML Admin Template" class="rounded-lg border-2 border-white shadow-md " style="width: 60px; height:60px; border-radius: 10px;" src="../image/<?php echo $data['gambar']; ?>">
                                                             </div>
                                                             <a style="margin-left: 10px; text-decoration:none; color:white; text-align:center;" class="font-medium whitespace-nowrap ml-4 items-center"><?php echo $data['nama_brg']; ?></a>
+                                                            
+                                                            <input type="hidden" name="nama_pembeli" value="<?php echo $_SESSION['username'] ?>">
+                                                            
                                                         </div>
 
                                                     </td>
                                                     <td class="text-right" style="vertical-align: middle;">Rp. <?= number_format($data['harga'], 0, ',', '.') ?></td>
+                                                   
                                                     <td class="text-right" style="vertical-align: middle;"><?= number_format($data['jumlah'], 0, ',', '.') ?></td>
 
                                                     <td style="vertical-align: middle;">Rp. <a class="harga text-right" style="text-decoration: none; color:white;"> <?= $data['harga'] ?></a></td>
@@ -139,13 +146,16 @@ if (!isset($_SESSION['login'])) {
                                             <?php endwhile ?>
                                             <tr>
                                                 <td colspan="4"></td>
-                                                <td><input type="text" class="form-control" id="totals" disabled value=""></td>
+                                                <td><input type="text" class="form-control" id="totals" name="total1" disabled value=""></td>
+                                                
                                             </tr>
+                                            
                                             <tr>
                                                 <td colspan="4"></td>
                                                 
-                                                <td><strong id="diskon" style="visibility: hidden; ">diskon 20%</strong><input type="text" class="form-control" id="total" disabled value=""></td>
+                                                <td><strong id="diskon" style="visibility: hidden; ">diskon 20%</strong><input type="text" name="total" class="form-control" id="total" disabled ></td>
                                             </tr>
+                                            </form>
                                         </tbody>
                                     </table>
                                 </div>
@@ -154,7 +164,7 @@ if (!isset($_SESSION['login'])) {
                         <canvas class="my-4 w-100" id="myChart" width="900" height="210"></canvas>
                     </div>
                                                 
-                    <!-- END: Transaction Details -->
+                   
                 </div>
 
             </main>

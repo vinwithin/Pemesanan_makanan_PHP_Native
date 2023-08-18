@@ -1,3 +1,4 @@
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -11,7 +12,7 @@
   </head>
   <body>
     <div class="signup-form">
-      <form action="signup.php" method="POST">
+      <form action="proses_signup.php" method="POST">
         <h2>Registrasi Akun</h2>
         <p class="hint-text">Registrasi dengan akun media sosial atau alamat email Anda</p>
 
@@ -28,7 +29,7 @@
           <input type="password" class="form-control input-lg" name="confirm_password" placeholder="Confirm password" required="required" />
         </div>
         <div class="form-group text-center">
-          <button type="submit" class="btn btn-success btn-block signup-btn">Daftar</button>
+          <button type="submit" name="register" class="btn btn-success btn-block signup-btn">Daftar</button>
         </div>
         <div class="or-seperator"><b>or</b></div>
         <div class="social-btn text-center">

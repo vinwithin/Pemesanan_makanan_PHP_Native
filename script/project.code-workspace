@@ -4,10 +4,13 @@
 			"path": ".."
 		},
 		{
-			"path": "../../../../../Users/Dell/Downloads/app"
+			"path": "../../p11"
 		},
 		{
-			"path": "../../p11"
+			"path": "../../../kasir_apk"
+		},
+		{
+			"path": "../../../../../Users/Dell/Downloads/app"
 		}
 	],
 	"settings": {}

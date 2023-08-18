@@ -6,28 +6,6 @@ if (!isset($_SESSION['login'])) {
     header("Location: login.php");
 }
 
-// Simulasi data order
-$order = [
-    (object) [
-        'order_id' => '001',
-        'name' => 'John Doe',
-        'alamat' => '123 Main Street',
-        'city' => 'New York',
-        'kode_pos' => '10001',
-        'ekspedisi' => 'JNE',
-        'transaction_time' => '2023-07-20 10:30:00',
-    ],
-    (object) [
-        'order_id' => '002',
-        'name' => 'Jane Smith',
-        'alamat' => '456 Elm Street',
-        'city' => 'Los Angeles',
-        'kode_pos' => '90001',
-        'ekspedisi' => 'GO-SEND',
-        'transaction_time' => '2023-07-20 12:45:00',
-    ],
-    // Tambahkan data order lainnya sesuai kebutuhan
-];
 
 ?>
 
@@ -54,7 +32,7 @@ $order = [
             <div class="sidebar  border-right col-md-3 col-lg-2 p-0 " style="background-color:#282a36; border-right: solid white 1px;  position:fixed; height:100vh; ">
                 <div class="offcanvas-md " tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
                     <a href="" class="d-flex align-items-center ml-3 mb-md-3 me-md-auto text-white gap-2 text-decoration-none" style="align-items: center; margin-left: 40px; ">
-                        <i class="bi bi-bootstrap-fill"></i>
+                        <i class="bi bi-bootstrap-fill" style="margin-top: 10px;"></i>
                         <span style="margin-top: 10px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;" class="fs-5">Shopify</span>
                     </a>
                     <div class="offcanvas-body d-md-flex flex-column p-4 pt-lg-2 overflow-y-auto">
@@ -94,8 +72,7 @@ $order = [
 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2 text-white" style="font-family: Georgia, 'Times New Roman', Times, serif;">Cart List</h1>
-                    <a href="cart.php" style="width:60px; height:30px;"><i class="fa-solid fa-cart-shopping fa-bounce fa-2xl" style="color: #f2d545;"></i></a>
+                    <h1 class="h2 text-white" style="font-family: Georgia, 'Times New Roman', Times, serif;">ORDER LIST</h1>
                 </div>
                 <canvas class="my-4 w-100" id="myChart" width="900" height="480"></canvas>
         
